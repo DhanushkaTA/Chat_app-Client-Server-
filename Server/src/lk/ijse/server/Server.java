@@ -1,6 +1,7 @@
 package lk.ijse.server;
 
 import javafx.scene.layout.VBox;
+import lk.ijse.server.controller.ChatAppServerController;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -63,7 +64,7 @@ public class Server {
                 while (localSocket.isConnected()){
                     try {
                         String  receiveMessage= bufferedReader.readLine();
-
+                        ChatAppServerController.addReceiveMessage(receiveMessage,vbox_messages);
                     } catch (IOException e) {
                         System.out.println("Error!!! Can't read received message from client");
                         closeServer(localSocket,bufferedWriter,bufferedReader);

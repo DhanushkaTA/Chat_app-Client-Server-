@@ -101,7 +101,7 @@ public class ChatAppServerController implements Initializable {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                vbox.getChildren().add(hBox)
+                vbox.getChildren().add(hBox);
             }
         });
     }
